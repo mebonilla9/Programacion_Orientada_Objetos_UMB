@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="co.appreactor.simulador">
+  <ClassDiagramComponents>
+    <Class name="Control" package="co.appreactor.simulador" visibility="public" xPosition="237.0" yPosition="43.0">
+      <Fields>
+        <Field name="tipo" type="String" visibility="private" isFinal="true"/>
+        <Field name="ajuste" type="boolean" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="tipo"/>
+          <Argument type="boolean" name="ajuste"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="autoInspeccionar" returnType="void" visibility="public"/>
+        <Method name="autoReparar" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Indicador" package="co.appreactor.simulador" visibility="public" xPosition="321.0" yPosition="453.0">
+      <Fields>
+        <Field name="tipo" type="String" visibility="private"/>
+        <Field name="valorMinimoIndicador" type="double" visibility="private" isFinal="true"/>
+        <Field name="valorMaximoIndicador" type="double" visibility="private" isFinal="true"/>
+        <Field name="valorIndicadorActual" type="double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="tipo"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="emitirAlerta" returnType="void" visibility="public"/>
+        <Method name="calibrar" returnType="void" visibility="public"/>
+        <Method name="getTipo" returnType="String" visibility="public"/>
+        <Method name="setTipo" returnType="void" visibility="public">
+          <Argument type="String" name="tipo"/>
+        </Method>
+        <Method name="autoInspeccionar" returnType="void" visibility="public"/>
+        <Method name="autoReparar" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Simulador" package="co.appreactor.simulador" visibility="public" xPosition="949.0" yPosition="307.0">
+      <Fields>
+        <Field name="avionSimulador" type="Avion" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Avion" package="co.appreactor.simulador" visibility="public" xPosition="606.0" yPosition="164.0">
+      <Fields>
+        <Field name="indicadorGps" type="Indicador" visibility="private" isFinal="true"/>
+        <Field name="indicadorVelocimetro" type="Indicador" visibility="private" isFinal="true"/>
+        <Field name="indicadorAltimetro" type="Indicador" visibility="private" isFinal="true"/>
+        <Field name="controlTimon" type="Control" visibility="private" isFinal="true"/>
+        <Field name="controlAleron" type="Control" visibility="private" isFinal="true"/>
+        <Field name="controlPotencia" type="Control" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Interface name="Inspector" package="co.appreactor.simulador" visibility="public" xPosition="36.0" yPosition="225.0">
+      <Methods>
+        <Method name="autoInspeccionar" returnType="void" visibility="package"/>
+        <Method name="autoReparar" returnType="void" visibility="package"/>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="co.appreactor.simulador.Control" target="co.appreactor.simulador.Inspector"/>
+    <HasRelation name="indicadorGps" source="co.appreactor.simulador.Avion" target="co.appreactor.simulador.Indicador" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="controlPotencia" source="co.appreactor.simulador.Avion" target="co.appreactor.simulador.Control" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="controlTimon" source="co.appreactor.simulador.Avion" target="co.appreactor.simulador.Control" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="indicadorVelocimetro" source="co.appreactor.simulador.Avion" target="co.appreactor.simulador.Indicador" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="indicadorAltimetro" source="co.appreactor.simulador.Avion" target="co.appreactor.simulador.Indicador" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="co.appreactor.simulador.Indicador" target="co.appreactor.simulador.Inspector"/>
+    <HasRelation name="avionSimulador" source="co.appreactor.simulador.Simulador" target="co.appreactor.simulador.Avion" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="controlAleron" source="co.appreactor.simulador.Avion" target="co.appreactor.simulador.Control" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
