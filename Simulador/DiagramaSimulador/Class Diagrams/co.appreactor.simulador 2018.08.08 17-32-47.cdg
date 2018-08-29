@@ -18,7 +18,7 @@
         <Method name="autoReparar" returnType="void" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="Indicador" package="co.appreactor.simulador" visibility="public" xPosition="321.0" yPosition="453.0">
+    <Class name="Indicador" package="co.appreactor.simulador" visibility="public" xPosition="266.0" yPosition="403.0">
       <Fields>
         <Field name="tipo" type="String" visibility="private"/>
         <Field name="valorMinimoIndicador" type="double" visibility="private" isFinal="true"/>
@@ -41,14 +41,14 @@
         <Method name="autoReparar" returnType="void" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="Simulador" package="co.appreactor.simulador" visibility="public" xPosition="949.0" yPosition="307.0">
+    <Class name="Simulador" package="co.appreactor.simulador" visibility="public" xPosition="933.0" yPosition="431.0">
       <Fields>
         <Field name="avionSimulador" type="Avion" visibility="private"/>
       </Fields>
       <Constructors/>
       <Methods/>
     </Class>
-    <Class name="Avion" package="co.appreactor.simulador" visibility="public" xPosition="606.0" yPosition="164.0">
+    <Class name="Avion" package="co.appreactor.simulador" visibility="public" xPosition="634.0" yPosition="176.0">
       <Fields>
         <Field name="indicadorGps" type="Indicador" visibility="private" isFinal="true"/>
         <Field name="indicadorVelocimetro" type="Indicador" visibility="private" isFinal="true"/>
@@ -70,14 +70,15 @@
     </Interface>
   </ClassDiagramComponents>
   <ClassDiagramRelations>
-    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="co.appreactor.simulador.Control" target="co.appreactor.simulador.Inspector"/>
+    <HasRelation name="indicadorAltimetro" source="co.appreactor.simulador.Avion" target="co.appreactor.simulador.Indicador" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
     <HasRelation name="indicadorGps" source="co.appreactor.simulador.Avion" target="co.appreactor.simulador.Indicador" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="controlPotencia" source="co.appreactor.simulador.Avion" target="co.appreactor.simulador.Control" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="controlAleron" source="co.appreactor.simulador.Avion" target="co.appreactor.simulador.Control" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="prueba" source="co.appreactor.simulador.Indicador" target="co.appreactor.simulador.Avion" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="co.appreactor.simulador.Control" target="co.appreactor.simulador.Inspector"/>
+    <HasRelation name="avionSimulador" source="co.appreactor.simulador.Simulador" target="co.appreactor.simulador.Avion" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
     <HasRelation name="controlTimon" source="co.appreactor.simulador.Avion" target="co.appreactor.simulador.Control" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
     <HasRelation name="indicadorVelocimetro" source="co.appreactor.simulador.Avion" target="co.appreactor.simulador.Indicador" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="indicadorAltimetro" source="co.appreactor.simulador.Avion" target="co.appreactor.simulador.Indicador" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="controlPotencia" source="co.appreactor.simulador.Avion" target="co.appreactor.simulador.Control" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
     <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="co.appreactor.simulador.Indicador" target="co.appreactor.simulador.Inspector"/>
-    <HasRelation name="avionSimulador" source="co.appreactor.simulador.Simulador" target="co.appreactor.simulador.Avion" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="controlAleron" source="co.appreactor.simulador.Avion" target="co.appreactor.simulador.Control" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
   </ClassDiagramRelations>
 </ClassDiagram>

@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="co.apprector.vehiculos">
+  <ClassDiagramComponents>
+    <Class name="Motor" package="co.apprector.vehiculos.partes" visibility="public" xPosition="139.0" yPosition="258.0">
+      <Fields>
+        <Field name="cilindraje" type="int" visibility="private"/>
+        <Field name="tipo" type="String" visibility="private"/>
+        <Field name="pistones" type="Piston[]" visibility="private"/>
+        <Field name="arbol" type="ArbolLevas" visibility="private"/>
+        <Field name="capacidadCamara" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="generarCombustion" returnType="void" visibility="public">
+          <Argument type="double" name="gasolina"/>
+        </Method>
+        <Method name="cambiarAceite" returnType="void" visibility="public">
+          <Argument type="double" name="aceite"/>
+        </Method>
+        <Method name="getCilindraje" returnType="int" visibility="public"/>
+        <Method name="setCilindraje" returnType="void" visibility="public">
+          <Argument type="int" name="cilindraje"/>
+        </Method>
+        <Method name="getTipo" returnType="String" visibility="public"/>
+        <Method name="setTipo" returnType="void" visibility="public">
+          <Argument type="String" name="tipo"/>
+        </Method>
+        <Method name="getPistones" returnType="Piston[]" visibility="public"/>
+        <Method name="setPistones" returnType="void" visibility="public">
+          <Argument type="Piston[]" name="pistones"/>
+        </Method>
+        <Method name="getArbol" returnType="ArbolLevas" visibility="public"/>
+        <Method name="setArbol" returnType="void" visibility="public">
+          <Argument type="ArbolLevas" name="arbol"/>
+        </Method>
+        <Method name="getCapacidadCamara" returnType="int" visibility="public"/>
+        <Method name="setCapacidadCamara" returnType="void" visibility="public">
+          <Argument type="int" name="capacidadCamara"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ArbolLevas" package="co.apprector.vehiculos.partes.subpartes" visibility="public" xPosition="139.0" yPosition="51.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Piston" package="co.apprector.vehiculos.partes.subpartes" visibility="public" xPosition="456.0" yPosition="51.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Celda" package="co.apprector.vehiculos.partes.subpartes" visibility="public" xPosition="1632.0" yPosition="883.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Eje" package="co.apprector.vehiculos.partes.subpartes" visibility="public" xPosition="1474.0" yPosition="191.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="CajaCambio" package="co.apprector.vehiculos.partes" visibility="public" xPosition="1040.0" yPosition="95.0">
+      <Fields>
+        <Field name="eje" type="Eje" visibility="private"/>
+        <Field name="velocidades" type="String[]" visibility="private"/>
+        <Field name="velocidadActual" type="String" visibility="private"/>
+        <Field name="reversa" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="asignarVelocidad" returnType="void" visibility="public">
+          <Argument type="String" name="velocidad"/>
+        </Method>
+        <Method name="asignarReversa" returnType="void" visibility="public">
+          <Argument type="String" name="reversa"/>
+        </Method>
+        <Method name="getEje" returnType="Eje" visibility="public"/>
+        <Method name="setEje" returnType="void" visibility="public">
+          <Argument type="Eje" name="eje"/>
+        </Method>
+        <Method name="getVelocidades" returnType="String[]" visibility="public"/>
+        <Method name="setVelocidades" returnType="void" visibility="public">
+          <Argument type="String[]" name="velocidades"/>
+        </Method>
+        <Method name="getVelocidadActual" returnType="String" visibility="public"/>
+        <Method name="setVelocidadActual" returnType="void" visibility="public">
+          <Argument type="String" name="velocidadActual"/>
+        </Method>
+        <Method name="getReversa" returnType="String" visibility="public"/>
+        <Method name="setReversa" returnType="void" visibility="public">
+          <Argument type="String" name="reversa"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Bateria" package="co.apprector.vehiculos.partes" visibility="public" xPosition="1220.0" yPosition="788.0">
+      <Fields>
+        <Field name="celdas" type="Celda[]" visibility="private"/>
+        <Field name="amperaje" type="double" visibility="private"/>
+        <Field name="voltaje" type="double" visibility="private"/>
+        <Field name="tipoCaja" type="String" visibility="private"/>
+        <Field name="capacidad" type="double" visibility="private"/>
+        <Field name="cargaMaxima" type="double" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="cargar" returnType="void" visibility="public"/>
+        <Method name="transmitirEnergia" returnType="void" visibility="public"/>
+        <Method name="getCeldas" returnType="Celda[]" visibility="public"/>
+        <Method name="setCeldas" returnType="void" visibility="public">
+          <Argument type="Celda[]" name="celdas"/>
+        </Method>
+        <Method name="getAmperaje" returnType="double" visibility="public"/>
+        <Method name="setAmperaje" returnType="void" visibility="public">
+          <Argument type="double" name="amperaje"/>
+        </Method>
+        <Method name="getVoltaje" returnType="double" visibility="public"/>
+        <Method name="setVoltaje" returnType="void" visibility="public">
+          <Argument type="double" name="voltaje"/>
+        </Method>
+        <Method name="getTipoCaja" returnType="String" visibility="public"/>
+        <Method name="setTipoCaja" returnType="void" visibility="public">
+          <Argument type="String" name="tipoCaja"/>
+        </Method>
+        <Method name="getCapacidad" returnType="double" visibility="public"/>
+        <Method name="setCapacidad" returnType="void" visibility="public">
+          <Argument type="double" name="capacidad"/>
+        </Method>
+        <Method name="getCargaMaxima" returnType="double" visibility="public"/>
+        <Method name="setCargaMaxima" returnType="void" visibility="public">
+          <Argument type="double" name="cargaMaxima"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Rueda" package="co.apprector.vehiculos.partes" visibility="public" xPosition="1500.0" yPosition="453.0">
+      <Fields>
+        <Field name="diametroRin" type="double" visibility="private"/>
+        <Field name="anchoLlanta" type="double" visibility="private"/>
+        <Field name="relacionAspecto" type="String" visibility="private"/>
+        <Field name="tamaño" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="girar" returnType="void" visibility="public"/>
+        <Method name="getDiametroRin" returnType="double" visibility="public"/>
+        <Method name="setDiametroRin" returnType="void" visibility="public">
+          <Argument type="double" name="diametroRin"/>
+        </Method>
+        <Method name="getAnchoLlanta" returnType="double" visibility="public"/>
+        <Method name="setAnchoLlanta" returnType="void" visibility="public">
+          <Argument type="double" name="anchoLlanta"/>
+        </Method>
+        <Method name="getRelacionAspecto" returnType="String" visibility="public"/>
+        <Method name="setRelacionAspecto" returnType="void" visibility="public">
+          <Argument type="String" name="relacionAspecto"/>
+        </Method>
+        <Method name="getTamaño" returnType="int" visibility="public"/>
+        <Method name="setTamaño" returnType="void" visibility="public">
+          <Argument type="int" name="tamaño"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Tanque" package="co.apprector.vehiculos.partes" visibility="public" xPosition="90.0" yPosition="753.0">
+      <Fields>
+        <Field name="capacidad" type="double" visibility="private"/>
+        <Field name="gasolinaActual" type="double" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="tanquear" returnType="void" visibility="public">
+          <Argument type="double" name="gasolina"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Vehiculo" package="co.apprector.vehiculos.tipos" visibility="public" isAbstract="true" xPosition="669.0" yPosition="550.0">
+      <Fields>
+        <Field name="motor" type="Motor" visibility="private"/>
+        <Field name="ruedas" type="Rueda[]" visibility="private"/>
+        <Field name="caja" type="CajaCambio" visibility="private"/>
+        <Field name="bateria" type="Bateria" visibility="private"/>
+        <Field name="tanque" type="Tanque" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="ensamblar" returnType="void" visibility="public" isAbstract="true"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="getMotor" returnType="Motor" visibility="public"/>
+        <Method name="setMotor" returnType="void" visibility="public">
+          <Argument type="Motor" name="motor"/>
+        </Method>
+        <Method name="getRuedas" returnType="Rueda[]" visibility="public"/>
+        <Method name="setRuedas" returnType="void" visibility="public">
+          <Argument type="Rueda[]" name="ruedas"/>
+        </Method>
+        <Method name="getCaja" returnType="CajaCambio" visibility="public"/>
+        <Method name="setCaja" returnType="void" visibility="public">
+          <Argument type="CajaCambio" name="caja"/>
+        </Method>
+        <Method name="getBateria" returnType="Bateria" visibility="public"/>
+        <Method name="setBateria" returnType="void" visibility="public">
+          <Argument type="Bateria" name="bateria"/>
+        </Method>
+        <Method name="getTanque" returnType="Tanque" visibility="public"/>
+        <Method name="setTanque" returnType="void" visibility="public">
+          <Argument type="Tanque" name="tanque"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Bus" package="co.apprector.vehiculos.tipos" visibility="public" xPosition="699.0" yPosition="337.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="ensamblar" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="EnsambladoraVehiculos" package="co.apprector.vehiculos" visibility="public" xPosition="687.0" yPosition="130.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="caja" source="co.apprector.vehiculos.tipos.Vehiculo" target="co.apprector.vehiculos.partes.CajaCambio" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="co.apprector.vehiculos.tipos.Vehiculo" target="co.apprector.vehiculos.partes.Rueda" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="motor" source="co.apprector.vehiculos.tipos.Vehiculo" target="co.apprector.vehiculos.partes.Motor" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="co.apprector.vehiculos.tipos.Bus" target="co.apprector.vehiculos.tipos.Vehiculo"/>
+    <HasRelation name="bateria" source="co.apprector.vehiculos.tipos.Vehiculo" target="co.apprector.vehiculos.partes.Bateria" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="co.apprector.vehiculos.partes.Motor" target="co.apprector.vehiculos.partes.subpartes.Piston" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="eje" source="co.apprector.vehiculos.partes.CajaCambio" target="co.apprector.vehiculos.partes.subpartes.Eje" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="co.apprector.vehiculos.partes.Motor" target="co.apprector.vehiculos.partes.subpartes.ArbolLevas" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="co.apprector.vehiculos.tipos.Vehiculo" target="co.apprector.vehiculos.partes.CajaCambio" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="co.apprector.vehiculos.partes.CajaCambio" target="co.apprector.vehiculos.partes.subpartes.Eje" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="co.apprector.vehiculos.tipos.Vehiculo" target="co.apprector.vehiculos.partes.Motor" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="co.apprector.vehiculos.tipos.Vehiculo" target="co.apprector.vehiculos.partes.Bateria" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="arbol" source="co.apprector.vehiculos.partes.Motor" target="co.apprector.vehiculos.partes.subpartes.ArbolLevas" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="tanque" source="co.apprector.vehiculos.tipos.Vehiculo" target="co.apprector.vehiculos.partes.Tanque" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="co.apprector.vehiculos.tipos.Vehiculo" target="co.apprector.vehiculos.partes.Tanque" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="co.apprector.vehiculos.partes.Bateria" target="co.apprector.vehiculos.partes.subpartes.Celda" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
