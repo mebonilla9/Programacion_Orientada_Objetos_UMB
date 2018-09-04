@@ -41,6 +41,11 @@ public class Perro extends Animal{
     public void setEdad(int edad) {
         this.edad = edad;
     }
+
+    @Override
+    public void sayHello() {
+        System.out.println("guau... guau... guau...");
+    }
     
     
     

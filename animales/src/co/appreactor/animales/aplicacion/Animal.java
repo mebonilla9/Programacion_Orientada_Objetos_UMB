@@ -68,5 +68,9 @@ public class Animal {
     public void setSexo(String sexo) {
         this.sexo = sexo;
     }
+    
+    public void sayHello(){
+        System.out.println("----");
+    }
 
 }

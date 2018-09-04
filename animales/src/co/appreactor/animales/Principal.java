@@ -37,6 +37,9 @@ public class Principal {
         
         System.out.println(miPerro.dormir()+" su raza es: "+miPerro.getRaza());
         System.out.println(miGato.comer()+" su color es: "+miGato.getColor());
+        
+        miPerro.sayHello();
+        miGato.sayHello();
     }
     
 }
