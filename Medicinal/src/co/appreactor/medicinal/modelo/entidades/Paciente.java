@@ -9,6 +9,8 @@ package co.appreactor.medicinal.modelo.entidades;
  *
  * @author Lord_Nightmare
  */
-public class Paciente {
+public class Paciente extends Persona{
+    
+    
     
 }
