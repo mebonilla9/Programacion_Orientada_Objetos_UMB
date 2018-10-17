@@ -5,7 +5,6 @@
  */
 package co.appreactor.medicinal.modelo.entidades;
 
-import co.appreactor.medicinal.ITrabajador;
 import java.util.ArrayList;
 
 /**

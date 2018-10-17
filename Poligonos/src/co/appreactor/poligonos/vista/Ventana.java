@@ -10,6 +10,8 @@ import co.appreactor.poligonos.persistencia.Figura;
 import co.appreactor.poligonos.persistencia.Punto2d;
 import co.appreactor.poligonos.persistencia.Triangulo;
 import java.awt.Color;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JColorChooser;
 import javax.swing.JOptionPane;
@@ -37,11 +39,12 @@ public class Ventana extends javax.swing.JFrame {
         dcb.addElement("Seleccione una figura..."); // 0
         dcb.addElement("Triangulo"); // 1
         dcb.addElement("Cuadrilatero"); // 2
-        // agregar el modelo al combobox
+
+        txtXcuatro.setEnabled(false);
+
+        txtYcuatro.setEnabled(false);
+
         cboTipoFigura.setModel(dcb);
-        //canvas = new PanelLienzo();
-        //canvas.setVisible(true);
-        //plCanvas = new PanelLienzo();
         canvas = new PanelLienzo();
         canvas.setBounds(4, 4, 450, 450);
         this.add(canvas);
@@ -112,6 +115,11 @@ public class Ventana extends javax.swing.JFrame {
         txtYtres.setText("250");
 
         cboTipoFigura.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cboTipoFigura.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cboTipoFiguraItemStateChanged(evt);
+            }
+        });
 
         jLabel8.setText("Color");
 
@@ -309,6 +317,18 @@ public class Ventana extends javax.swing.JFrame {
     private void btnElegirColorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnElegirColorActionPerformed
         txtColorFondo.setBackground(JColorChooser.showDialog(rootPane, "Elegir color para figura", Color.RED));
     }//GEN-LAST:event_btnElegirColorActionPerformed
+
+    private void cboTipoFiguraItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cboTipoFiguraItemStateChanged
+        if (cboTipoFigura.getSelectedIndex() < 2) {
+            txtXcuatro.setText("");
+            txtXcuatro.setEnabled(false);
+            txtYcuatro.setText("");
+            txtYcuatro.setEnabled(false);
+        } else {
+            txtXcuatro.setEnabled(true);
+            txtYcuatro.setEnabled(true);
+        }
+    }//GEN-LAST:event_cboTipoFiguraItemStateChanged
 
     private Figura generarTriangulo() {
         Triangulo tri = new Triangulo(txtColorFondo.getBackground(), "Un triangulo mas");
